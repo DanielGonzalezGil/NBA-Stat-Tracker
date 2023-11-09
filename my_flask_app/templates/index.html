@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Frontend</title>
+</head>
+<body>
+    <h1>API Frontend</h1>
+
+    <div id="apiData"></div>
+
+    <script>
+        // Fetch data from the API
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                // Display the data on the page
+                const apiDataElement = document.getElementById('apiData');
+                apiDataElement.innerHTML = '<h2>API Data</h2>';
+                
+                if (data.length === 0) {
+                    apiDataElement.innerHTML += '<p>No data available</p>';
+                } else {
+                    data.forEach(item => {
+                        apiDataElement.innerHTML += `<p>ID: ${item.id}, Name: ${item.name}</p>`;
+                    });
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
