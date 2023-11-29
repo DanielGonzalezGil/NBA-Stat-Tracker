@@ -1,33 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Frontend</title>
-</head>
-<body>
-    <h1>API Frontend</h1>
+<!-- Add an input field for the player name -->
+<input type="text" id="playerNameInput" placeholder="Enter player name">
+<button onclick="fetchPlayerData()">Get Player Data</button>
 
-    <div id="apiData"></div>
+<div id="apiData"></div>
 
-    <script>
-        // Fetch data from the API
-        fetch('/api/data')
+<script>
+    function fetchPlayerData() {
+        // Get the player name from the input field
+        const playerName = document.getElementById('playerNameInput').value;
+
+        // Fetch data from the API with the player name
+        fetch(`/api/data?player_name=${playerName}`)
             .then(response => response.json())
             .then(data => {
                 // Display the data on the page
-                const apiDataElement = document.getElementById('apiData');
+                const apiDataElement = document.getElementById('Player Stats');
                 apiDataElement.innerHTML = '<h2>API Data</h2>';
                 
                 if (data.length === 0) {
                     apiDataElement.innerHTML += '<p>No data available</p>';
                 } else {
-                    data.forEach(item => {
-                        apiDataElement.innerHTML += `<p>ID: ${item.id}, Name: ${item.name}</p>`;
-                    });
+                    // Extract and display relevant player data
+                    const player = data[0];
+                    apiDataElement.innerHTML += `<p>Name: ${player.first_name} ${player.last_name}</p>`;
+                    apiDataElement.innerHTML += `<p>Position: ${player.position}</p>`;
+                    apiDataElement.innerHTML += `<p>Height: ${player.height_feet}' ${player.height_inches}"</p>`;
+                    apiDataElement.innerHTML += `<p>Weight: ${player.weight_pounds} lbs</p>`;
+                    apiDataElement.innerHTML += `<p>Team: ${player.team.full_name}</p>`;
+                    // Add more lines for other stats as needed
                 }
             })
             .catch(error => console.error('Error fetching data:', error));
-    </script>
-</body>
-</html>
+    }
+</script>
