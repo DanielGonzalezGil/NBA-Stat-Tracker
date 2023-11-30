@@ -1,9 +1,9 @@
-# Python Programming Final Project
+
 # NBA Stat Tracker
 
 ## Introduction
 
-Welcome to the NBA Stat Tracker, a  web application designed to view current NBA stats. The NBA Stat Tracker not only brings NBA data to your fingertips but also serves as an educational tool demonstrating the effective use of Model-View-Controller (MVC) architecture and Object-Oriented Programming (OOP) principles.
+Welcome to the NBA Stat Tracker, a web application designed to view current NBA stats. The NBA Stat Tracker not only brings NBA data to your fingertips but also serves as an educational tool demonstrating the effective use of Model-View-Controller (MVC) architecture and Object-Oriented Programming (OOP) principles.
 
 ## Project Objectives
 
@@ -15,10 +15,10 @@ The primary goal is to transform static numbers into a dynamic, interactive expe
 
 ## Methodology
 
-We chose Flask for its lightweight and flexible nature, ideal for a streamlined and effective development process. Key features of our project include:
+ Flask was choosen for its lightweight and flexible nature, ideal for a streamlined and effective development process. Key features of the application include:
 
 - **Flask Framework**: Utilized for its simplicity and efficiency, perfect for both backend and frontend development.
-- **Basketball Stats API**: This API is the cornerstone of our application, offering up-to-date and comprehensive player stats.
-- **User-Centric Design**: Crafted with HTML, CSS, and Python, our frontend is designed to maximize user engagement and interactivity.
+- **balldontlie API**: This API is the cornerstone of the application, offering up-to-date and comprehensive player stats.
+- **User-Centric Design**: Crafted with HTML, CSS,JavaScript and Python.
 - **Efficient Data Handling**: Leveraging Flask's capabilities to provide a seamless and responsive data experience.
 
