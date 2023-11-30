@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Balldontlie API base URL
-BALLO_DONT_LIE_API_BASE = "https://www.balldontlie.io/api/v1/"
+BALL_DONT_LIE_API_BASE = "https://www.balldontlie.io/api/v1/"
 
 
 # Simulated API endpoint
@@ -16,11 +16,11 @@ def get_api_data():
     if not player_name:
         return jsonify({"error": "Player name is required"}), 400
 
-    # Construct the API endpoint for player search
-    player_search_endpoint = f"{BALLO_DONT_LIE_API_BASE}players"
+    # API endpoint for player search
+    player_search_endpoint = f"{BALL_DONT_LIE_API_BASE}players"
     params = {"search": player_name}
 
-    # Make the API call
+    # API call
     response = requests.get(player_search_endpoint, params=params)
     print(response.text)
 

@@ -1,8 +1,39 @@
-<!-- Add an input field for the player name -->
-<input type="text" id="playerNameInput" placeholder="Enter player name">
-<button onclick="fetchPlayerData()">Get Player Data</button>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NBA Stats</title>
 
-<div id="apiData"></div>
+        <!-- Bootstrap CSS and custom CSS link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="path/to/main.css">
+    </head>
+    
+    <body class="container mt-5">
+        <div class="jumbotron">
+            <img src="{{ url_for('static', filename='images/nba-logo-transparent.png') }}" alt="NBA Logo" class="nba-logo" />
+            <h1 class="display-4">NBA Player Stats</h1>
+            <p class="lead">Enter the name of an NBA player to retrieve their stats.</p>
+        </div>
+    
+        <div class="form-group">
+            <label for="playerNameInput">Player Name:</label>
+            <input type="text" class="form-control" id="playerNameInput" placeholder="Enter player name">
+        </div>
+        
+        <button onclick="fetchPlayerData()" class="btn btn-primary">Get Player Data</button>
+    
+        <!-- This div will contain the player information cards -->
+        <div id="apiData" class="mt-4"></div>
+    
+        <!-- Bootstrap JS and other scripts -->
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    </body>
+
+
 
 <script>
     function fetchPlayerData() {
@@ -14,8 +45,8 @@
             .then(response => response.json())
             .then(data => {
                 // Display the data on the page
-                const apiDataElement = document.getElementById('Player Stats');
-                apiDataElement.innerHTML = '<h2>API Data</h2>';
+                const apiDataElement = document.getElementById('apiData');
+                apiDataElement.innerHTML = '<h2>Player Info</h2>';
                 
                 if (data.length === 0) {
                     apiDataElement.innerHTML += '<p>No data available</p>';
@@ -24,12 +55,22 @@
                     const player = data[0];
                     apiDataElement.innerHTML += `<p>Name: ${player.first_name} ${player.last_name}</p>`;
                     apiDataElement.innerHTML += `<p>Position: ${player.position}</p>`;
-                    apiDataElement.innerHTML += `<p>Height: ${player.height_feet}' ${player.height_inches}"</p>`;
-                    apiDataElement.innerHTML += `<p>Weight: ${player.weight_pounds} lbs</p>`;
-                    apiDataElement.innerHTML += `<p>Team: ${player.team.full_name}</p>`;
+                    
+                    // Check for null or undefined values for height and weight
+                    const heightText = (player.height_feet !== null && player.height_inches !== null) ?
+                        `${player.height_feet}\u2019 ${player.height_inches}\u201D` : 'Not available';
+                    apiDataElement.innerHTML += `<p>Height: ${heightText}</p>`;
+
+                    const weightText = (player.weight_pounds !== null) ? `${player.weight_pounds} lbs` : 'Not available';
+                    apiDataElement.innerHTML += `<p>Weight: ${weightText}</p>`;
+
+                    apiDataElement.innerHTML += `<p>Team: ${player.team.full_name || 'Not available'}</p>`;
                     // Add more lines for other stats as needed
                 }
             })
             .catch(error => console.error('Error fetching data:', error));
     }
 </script>
+
+
+

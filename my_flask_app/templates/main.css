@@ -1,26 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
+.jumbotron {
+    border-radius: 10px;
 }
 
-main {
-    padding: 1em;
+.btn-primary {
+    background-color: #006bb6;
+    border-color: #0056a3;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.btn-primary:hover {
+    background-color: #0056a3;
+    border-color: #004487;
 }
+
+/* Style the input field */
+input[type="text"].form-control {
+    border: 2px solid #ced4da;
+    padding: .375rem .75rem;
+}
+
+input[type="text"].form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+
+/* Cards for player info */
+.player-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 20px;
+    }
+
+    .player-card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* Add animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.player-card {
+    animation: fadeIn 0.5s;
+}
+
+.nba-logo {
+    height: 25px; 
+    width: auto;
+    margin-right: 20px; /* Add margin if you want space between the logo and the text */
+    display: inline-block; /* To align with the title if necessary */
+    vertical-align: middle; /* Aligns the logo vertically with the text */
+}
+
+
+/* Add more custom styles as needed */
