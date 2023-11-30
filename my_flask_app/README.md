@@ -7,7 +7,7 @@ Welcome to the NBA Stat Tracker, a  web application designed to view current NBA
 
 ## Project Objectives
 
-The primary goal is to transform static numbers into a dynamic, interactive experience. The NBA Stat Tracker, powered by balldontlie API, provides real-time data, offering insights into player performances and game statistics. The application is structured on MVC architecture, ensuring a clean separation between:
+The primary goal is to transform static numbers into a dynamic, interactive experience. The NBA Stat Tracker, powered by the [balldontlie API](https://www.balldontlie.io/home.html#get-all-teams), provides real-time data, offering insights into player performances and game statistics. The application is structured on MVC architecture, ensuring a clean separation between:
 
 - **Model**: The data layer that handles NBA statistics.
 - **View**: The presentation layer that users interact with.
