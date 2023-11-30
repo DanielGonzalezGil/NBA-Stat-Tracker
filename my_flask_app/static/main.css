@@ -1,0 +1,78 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+.jumbotron {
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: #006bb6;
+    border-color: #0056a3;
+}
+
+.btn-primary:hover {
+    background-color: #0056a3;
+    border-color: #004487;
+}
+
+/* Style the input field */
+input[type="text"].form-control {
+    border: 2px solid #ced4da;
+    padding: .375rem .75rem;
+}
+
+input[type="text"].form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+
+/* Cards for player info */
+.player-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 20px;
+    }
+
+    .player-card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* Add animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.player-card {
+    animation: fadeIn 0.5s;
+}
+
+.nba-logo {
+    width: 100%; /* This will make the logo responsive within its column */
+    max-width: 120px; /* Adjust as necessary to set the maximum size */
+    height: auto; /* This will maintain the aspect ratio */
+}
+
+/* Optional: Adjust the bottom margin of the logo for alignment */
+@media (min-width: 768px) {
+    .nba-logo {
+        margin-bottom: -5px;
+    }
+}
+
+
+
+/* Add more custom styles as needed */
+
