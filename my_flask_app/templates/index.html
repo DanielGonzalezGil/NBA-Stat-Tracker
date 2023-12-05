@@ -33,16 +33,15 @@
     <!-- This div will contain the player information cards -->
     <div id="apiData" class="mt-4"></div>
 
+    <!-- Image tag for displaying the graph -->
+    <img id="playerStatsGraph" class="d-none mt-4" alt="Player Stats Graph" style="width:100%; height:auto;" />
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
-
-
-
 
 <script>
     function fetchPlayerData() {
@@ -65,7 +64,7 @@
                     apiDataElement.innerHTML += `<p>Name: ${player.first_name} ${player.last_name}</p>`;
                     apiDataElement.innerHTML += `<p>Position: ${player.position}</p>`;
                     
-                    // Check for null or undefined values for height and weight
+                    // Handle height and weight
                     const heightText = (player.height_feet !== null && player.height_inches !== null) ?
                         `${player.height_feet}\u2019 ${player.height_inches}\u201D` : 'Not available';
                     apiDataElement.innerHTML += `<p>Height: ${heightText}</p>`;
@@ -74,11 +73,20 @@
                     apiDataElement.innerHTML += `<p>Weight: ${weightText}</p>`;
 
                     apiDataElement.innerHTML += `<p>Team: ${player.team.full_name || 'Not available'}</p>`;
-                    // Add more lines for other stats as needed
+                    
+                    // Fetch and display the graph for the player's season averages
+                    // Replace '2023' with the actual season year as needed
+                    fetch(`/api/player_stats/graph?player_id=${player.id}&season=2020`)
+                        .then(response => response.blob())
+                        .then(blob => {
+                            const graphUrl = URL.createObjectURL(blob);
+                            const graphImage = document.getElementById('playerStatsGraph');
+                            graphImage.src = graphUrl;
+                            graphImage.classList.remove('d-none');
+                        })
+                        .catch(error => console.error('Error fetching graph:', error));
                 }
             })
             .catch(error => console.error('Error fetching data:', error));
     }
 </script>
-
-

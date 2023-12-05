@@ -19,6 +19,6 @@ The primary goal is to transform static numbers into a dynamic, interactive expe
 
 - **Flask Framework**: Utilized for its simplicity and efficiency, perfect for both backend and frontend development.
 - **balldontlie API**: This API is the cornerstone of the application, offering up-to-date and comprehensive player stats.
-- **User-Centric Design**: Crafted with HTML, CSS,JavaScript and Python.
+- **User-Centric Design**: Crafted with HTML, CSS, JavaScript and Python.
 - **Efficient Data Handling**: Leveraging Flask's capabilities to provide a seamless and responsive data experience.
 
