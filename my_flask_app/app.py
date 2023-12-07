@@ -30,21 +30,27 @@ def player_stats_chart():
     if not stats_data:
         return jsonify({"error": "No stats data found"}), 404
 
-    # Define a mapping of column names to user-friendly names
     column_names_mapping = {
         "games_played": "Games Played",
+        # "min": "Minutes played per game",
         "fgm": "Field Goals Made",
         "fga": "Field Goals Attempted",
         "fg3m": "Three-Point Field Goals Made",
+        "fg3a": "Three-Point Field Goals Attempted",
         "ftm": "Free Throws Made",
+        "fta": "Free Throws Attempted",
         "oreb": "Offensive Rebounds",
+        "dreb": "Defensive Rebounds",
         "reb": "Total Rebounds",
         "stl": "Steals",
+        "blk": "Blocks",
         "turnover": "Turnovers",
+        "pf": "Personal Fouls",
         "pts": "Points",
+        "fg_pct": "Field Goal %",
         "ast": "Assists",
-        "fg3_pct": "Three-Point Field Goal %"
-        # Add more mappings as necessary
+        "fg3_pct": "Three-Point Field Goal %",
+        "ft_pct": "Free Throw %",
     }
 
     # Rename the keys using the mapping
@@ -53,10 +59,7 @@ def player_stats_chart():
     # Exclude 'player_id' and 'season' if they are still present
     friendly_data.pop("season", None)
     friendly_data.pop("player_id", None)
-
-    # # Exclude certain columns from the data
-    # stats_data.pop("player_id", None)
-    # stats_data.pop("season", None)
+    friendly_data.pop("min", None)
 
     # Format for Chart.js
     chart_data = {

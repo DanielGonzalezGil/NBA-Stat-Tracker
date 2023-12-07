@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NBA Stats</title>
 
-    <!-- Bootstrap CSS and custom CSS link -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 
@@ -20,7 +20,8 @@
         <div class="col-md-10">
             <div class="jumbotron">
                 <h1 class="display-4">NBA Player Stats</h1>
-                <p class="lead">Enter the name of an NBA player to retrieve their stats.</p>
+                <p class="lead">Enter the name of an NBA player & the season year to retrieve their Season Averages
+                </p>
             </div>
         </div>
     </div>
@@ -37,9 +38,14 @@
 
     <button onclick="getPlayerStats()" class="btn btn-primary mb-3">Get Stats</button>
     
-    <canvas id="playerStatsChart" width="400" height="400"></canvas>
+
 
     <div id="apiData" class="mt-4"></div>
+
+    <div class="chart-container">
+        <canvas id="playerStatsChart"></canvas>
+    </div>
+
 </body>
 </html>
 
@@ -52,7 +58,7 @@
             .then(response => response.json())
             .then(data => {
                 if (data.length > 0) {
-                    var playerId = data[0].id; // Assuming the ID is in the first element
+                    var playerId = data[0].id; 
                     renderChart(playerId, season);
                 }
             })
@@ -68,12 +74,12 @@
                     type: 'bar',
                     data: chartData,
                     options: {
-                        responsive: false,
+                        responsive: true,
                         maintainAspectRatio: true,
                         scales: {
                             y: [{
                                 ticks: {
-                                    // beginAtZero: true,
+                                    
                                     stepSize: 1,
                                     callback: function(value) {
                                         if (Number.isInteger(value)) {

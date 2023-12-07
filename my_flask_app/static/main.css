@@ -17,7 +17,7 @@ body {
     border-color: #004487;
 }
 
-/* Style the input field */
+
 input[type="text"].form-control {
     border: 2px solid #ced4da;
     padding: .375rem .75rem;
@@ -49,7 +49,7 @@ input[type="text"].form-control:focus {
     }
 }
 
-/* Add animations */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -60,24 +60,28 @@ input[type="text"].form-control:focus {
 }
 
 .nba-logo {
-    width: 100%; /* This will make the logo responsive within its column */
-    max-width: 120px; /* Adjust as necessary to set the maximum size */
-    height: auto; /* This will maintain the aspect ratio */
+    width: 100%; 
+    max-width: 120px; 
+    height: auto; 
 }
 
-/* Optional: Adjust the bottom margin of the logo for alignment */
+
 @media (min-width: 768px) {
     .nba-logo {
         margin-bottom: -5px;
     }
 }
 
-#playerStatsChart {
-    max-width: auto; /* or any other max-width */
-    max-height: auto; /* or any other max-height */
-    margin: auto; /* centers the canvas element */
+.chart-container {
+    width: 100%; 
+    max-width: 1000px; 
+    margin: auto; 
+    padding: 20px; 
 }
 
+#playerStatsChart {
+    width: 100%; 
+    height: auto; 
 
-/* Add more custom styles as needed */
+}
 
