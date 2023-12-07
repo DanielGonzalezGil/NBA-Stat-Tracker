@@ -72,6 +72,11 @@ input[type="text"].form-control:focus {
     }
 }
 
+#playerStatsChart {
+    max-width: auto; /* or any other max-width */
+    max-height: auto; /* or any other max-height */
+    margin: auto; /* centers the canvas element */
+}
 
 
 /* Add more custom styles as needed */
