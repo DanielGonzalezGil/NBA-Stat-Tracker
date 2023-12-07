@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Welcome to the NBA Stat Tracker, a web application designed to view current NBA stats.
+Welcome to the NBA Stat Tracker, a web application designed to view season averages of NBA players.
 
 ## Project Objectives
 
