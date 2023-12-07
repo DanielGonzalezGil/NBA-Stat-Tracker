@@ -32,7 +32,6 @@ def player_stats_chart():
 
     column_names_mapping = {
         "games_played": "Games Played",
-        # "min": "Minutes played per game",
         "fgm": "Field Goals Made",
         "fga": "Field Goals Attempted",
         "fg3m": "Three-Point Field Goals Made",
@@ -53,21 +52,18 @@ def player_stats_chart():
         "ft_pct": "Free Throw %",
     }
 
-    # Rename the keys using the mapping
     friendly_data = {column_names_mapping.get(k, k): v for k, v in stats_data.items()}
 
-    # Exclude 'player_id' and 'season' if they are still present
     friendly_data.pop("season", None)
     friendly_data.pop("player_id", None)
     friendly_data.pop("min", None)
 
-    # Format for Chart.js
     chart_data = {
-        "labels": list(friendly_data.keys()),  # Convert to list
+        "labels": list(friendly_data.keys()),
         "datasets": [
             {
                 "label": f"Season {season} Averages",
-                "data": list(friendly_data.values()),  # Convert to list
+                "data": list(friendly_data.values()),
                 "backgroundColor": "rgba(255, 99, 132, 0.2)",
                 "borderColor": "rgba(255, 99, 132, 1)",
                 "borderWidth": 1,

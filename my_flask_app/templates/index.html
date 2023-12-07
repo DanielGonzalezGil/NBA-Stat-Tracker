@@ -53,7 +53,7 @@
     function getPlayerStats() {
         var playerName = document.getElementById('playerNameInput').value;
         var season = document.getElementById('seasonInput').value;
-        // Fetch player ID based on playerName
+        
         fetch(`/api/data?player_name=${playerName}`)
             .then(response => response.json())
             .then(data => {

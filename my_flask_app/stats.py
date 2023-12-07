@@ -21,7 +21,5 @@ class Stats:
         if not data:
             return None
 
-        # Simplifying the data structure for Chart.js
-        # Assuming data[0] contains the stats, as there should be only one entry per player per season
         simplified_data = data[0]
         return simplified_data
