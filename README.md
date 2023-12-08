@@ -24,9 +24,21 @@ The goal of the project is to transform static numbers into a dynamic, interacti
 
 ## Setup & Use
 
-To use the following application, run the following git command if you have a Apple Mac computer
+To use the application, you need to run the following git command on your Terminal if you have a Apple Mac computer. Use the Command prompt if you have a Windows computer. 
 
 ```
 git clone https://github.com/DanielGonzalezGil/NBA-Stat-Tracker
-
 ```
+
+After running the command, you should have a folder called *NBA-Stat-Tracker*  and within that folder, there should be another folder called *my_flask_app* with the following files on your local machine:
+
+- `app.py`
+- `stats.py`
+- `api_handler.py`
+- `player.py`
+- `index.html`
+- `main.css`
+
+To execute the program, open the *NBA-Stat-Tracker* folder in a Code editor (like Visual Studio Code) and go to the `app.py` file. Once you are in the file, execute the file in your code editor. You should be prompted by the Terminal (if you are using a Mac) or the Command prompt (if you are using a Windows computer) with a local http host address. copy that address into a web browser and you should be able to use the application now. 
+
+
