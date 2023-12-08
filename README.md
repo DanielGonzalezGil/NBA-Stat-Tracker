@@ -22,3 +22,11 @@ The goal of the project is to transform static numbers into a dynamic, interacti
 - **User-Centric Design**: Crafted with HTML, CSS, Bootstrap, JavaScript and Python.
 - **Efficient Data Handling**: Leveraging Flask's capabilities to provide a seamless and responsive data experience.
 
+## Setup & Use
+
+To use the following application, run the following git command if you have a Apple Mac computer
+
+```
+git clone https://github.com/DanielGonzalezGil/NBA-Stat-Tracker
+
+```
