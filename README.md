@@ -19,7 +19,7 @@ The goal of the project is to transform static numbers into a dynamic, interacti
 
 - **Flask Framework**: Utilized for its simplicity and efficiency, perfect for both backend and frontend development.
 - **balldontlie API**: This API is the cornerstone of the application, offering up-to-date and comprehensive player stats.
-- **User-Centric Design**: Crafted with HTML, CSS, Bootstrap, JavaScript and Python.
+- **User-Centric Design**: Crafted with HTML, CSS, Bootstrap, and JavaScript.
 - **Efficient Data Handling**: Leveraging Flask's capabilities to provide a seamless and responsive data experience.
 
 ## Setup & Use
@@ -39,6 +39,6 @@ After running the command, you should have a folder called *NBA-Stat-Tracker*  a
 - `index.html`
 - `main.css`
 
-To execute the program, open the *NBA-Stat-Tracker* folder in a Code editor (like Visual Studio Code) and go to the `app.py` file. Once you are in the file, execute the file in your code editor. You should be prompted by the Terminal (if you are using a Mac) or the Command prompt (if you are using a Windows computer) with a local http host address. copy that address into a web browser and you should be able to use the application now. 
+To execute the program, open the *NBA-Stat-Tracker* folder in a Code editor (like Visual Studio Code) and go to the `app.py` file. Once you are in the file, execute the file in your code editor. You should be prompted by the Terminal (if you are using a Mac) or the Command prompt (if you are using a Windows computer) with a local http host address. Copy that address into a web browser and you should be able to use the application now within the browser. 
 
 
